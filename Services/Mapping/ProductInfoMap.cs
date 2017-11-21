@@ -8,9 +8,9 @@ using System.Threading.Tasks;
 
 namespace Services.Mapping
 {
-	public static class MappingHelper
+	public static class Mapping
 	{
-		public static ProductInfo ToProductInfoMap(Product product)
+		public static ProductInfo ToProductInfoMap(this Product product)
 		{
 			return new ProductInfo()
 			{

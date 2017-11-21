@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
+using Services.Mapping;
 using Services.DTOs;
 using Services.Interfaces;
 
@@ -38,7 +38,7 @@ namespace Services.Service
 			foreach(var product in _unitOfWork.ProductRepository.GetAll())
 			{
 				ProductInfo productInfo = new ProductInfo();
-				productInfo = Mapping.MappingHelper.ToProductInfoMap(product);
+				productInfo = product.ToProductInfoMap();
 				products.Add(productInfo);
 			}
 			return products;
