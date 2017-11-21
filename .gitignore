@@ -1,0 +1,7 @@
+Data/obj/
+DTOs/obj/
+OrdersAndProducts/bin/
+OrdersAndProducts/obj/
+packages/
+Services/obj/
+OrdersAndProducts.Tests/obj/
