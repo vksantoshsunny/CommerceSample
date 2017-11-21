@@ -51,6 +51,7 @@
     <Compile Include="DTOs\OrderDetailInfo.cs" />
     <Compile Include="DTOs\OrderInfo.cs" />
     <Compile Include="DTOs\ProductInfo.cs" />
+    <Compile Include="Mapping\ProductInfoMap.cs" />
     <Compile Include="Repository\IProductRepository.cs" />
     <Compile Include="Repository\IRepository.cs" />
     <Compile Include="Service\IService.cs" />

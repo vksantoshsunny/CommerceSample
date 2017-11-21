@@ -34,7 +34,14 @@ namespace Services.Service
 
 		List<ProductInfo> IService.GetAllProducts()
 		{
-			throw new NotImplementedException();
+			List<ProductInfo> products = new List<ProductInfo>();
+			foreach(var product in _unitOfWork.ProductRepository.GetAll())
+			{
+				ProductInfo productInfo = new ProductInfo();
+				productInfo = Mapping.MappingHelper.ToProductInfoMap(product);
+				products.Add(productInfo);
+			}
+			return products;
 		}
 
 		ProductInfo IService.GetProduct(int productId)
