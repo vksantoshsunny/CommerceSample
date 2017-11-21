@@ -1,5 +1,8 @@
-﻿using System.Web.Mvc;
+﻿using OrdersAndProducts.App_Start;
+using System.Web.Mvc;
+using System.Web.Http;
 using System.Web.Routing;
+using OrdersAndProducts.Infrastructure;
 
 namespace OrdersAndProducts
 {
@@ -9,6 +12,10 @@ namespace OrdersAndProducts
         {
             AreaRegistration.RegisterAllAreas();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
+            DependencyResolver.SetResolver(new NinjectDependencyResolver());
+
+            FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
+
         }
     }
 }

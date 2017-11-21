@@ -6,12 +6,12 @@ namespace Services.UOW
 {
 	public class UnitOfWork: IUnitOfWork
 	{
+        
+        private readonly CommerceContext _context;
 
-		private readonly CommerceContext _context;
-
-		public UnitOfWork(CommerceContext context)
+		public UnitOfWork()
 		{
-			_context = context;
+			_context = new CommerceContext();
 			ProductRepository = new ProductRepository(_context);
 
 		}

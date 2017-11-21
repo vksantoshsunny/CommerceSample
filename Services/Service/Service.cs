@@ -5,6 +5,7 @@ using System.Text;
 using Services.Mapping;
 using Services.DTOs;
 using Services.Interfaces;
+using Services.UOW;
 
 namespace Services.Service
 {
@@ -12,9 +13,9 @@ namespace Services.Service
 	{
 		private readonly IUnitOfWork _unitOfWork;
 
-		public Service(IUnitOfWork unitOfWork)
+		public Service()
 		{
-			this._unitOfWork = unitOfWork;
+			this._unitOfWork = new UnitOfWork();
 		}
 
 		void IService.AddProduct(ProductInfo product)

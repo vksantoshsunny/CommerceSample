@@ -13,7 +13,7 @@ namespace OrdersAndProducts.Controllers
 			_service = service;
 		}
         // GET: Home
-        public ActionResult Products()
+        public ActionResult Index()
         {
 			ProductsViewModel productsViewModel = new ProductsViewModel();
 			_service.GetAllProducts();
