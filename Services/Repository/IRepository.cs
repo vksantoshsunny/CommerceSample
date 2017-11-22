@@ -12,6 +12,6 @@ namespace Services.Interfaces
 		ICollection<TEntity> GetAll();
 		TEntity Add(TEntity entity);
 		void Remove(int id);
-		IEnumerable<TEntity> SqlQuery(string sql, params object[] parms)
+		IEnumerable<TEntity> SqlQuery(string sql, params object[] parms);
 	}
 }
