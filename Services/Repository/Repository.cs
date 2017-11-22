@@ -40,5 +40,10 @@ namespace Services.Repository
 			Context.Set<TEntity>().Remove(entity);
 			Context.SaveChanges();
 		}
+
+		public IEnumerable<TEntity> SqlQuery(string sql, params object[] parms)
+		{
+			return Context.Database.SqlQuery<TEntity>(sql, parms);
+		}
 	}
 }
