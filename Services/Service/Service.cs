@@ -13,27 +13,27 @@ namespace Services.Service
 	{
 		private readonly IUnitOfWork _unitOfWork;
 
-		public Service()
+		public Service(IUnitOfWork unitOfWork)
 		{
-			this._unitOfWork = new UnitOfWork();
+			this._unitOfWork = unitOfWork;
 		}
 
-		void IService.AddProduct(ProductInfo product)
-		{
-			throw new NotImplementedException();
-		}
-
-		void IService.DeleteProduct(int id)
+		public void AddProduct(ProductInfo product)
 		{
 			throw new NotImplementedException();
 		}
 
-		void IDisposable.Dispose()
+        public void DeleteProduct(int id)
 		{
 			throw new NotImplementedException();
 		}
 
-		List<ProductInfo> IService.GetAllProducts()
+        public void Dispose()
+		{
+			throw new NotImplementedException();
+		}
+
+        public List<ProductInfo> GetAllProducts()
 		{
 			List<ProductInfo> products = new List<ProductInfo>();
 			foreach(var product in _unitOfWork.ProductRepository.GetAll())
@@ -45,12 +45,12 @@ namespace Services.Service
 			return products;
 		}
 
-		ProductInfo IService.GetProduct(int productId)
+        public ProductInfo GetProduct(int productId)
 		{
 			throw new NotImplementedException();
 		}
 
-		void IService.UpdateProduct(ProductInfo product)
+        public void UpdateProduct(ProductInfo product)
 		{
 			throw new NotImplementedException();
 		}
