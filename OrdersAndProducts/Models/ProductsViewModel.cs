@@ -6,7 +6,7 @@ using System.Web.Mvc;
 
 namespace OrdersAndProducts.Models
 {
-	public class ProductsViewModel 
+	public class ProductsViewModel : BaseViewModel
 	{
 		public int Id { get; set; }
 		public string Name { get; set; }
