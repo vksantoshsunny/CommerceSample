@@ -9,9 +9,9 @@ using System.Collections.Generic;
 
 namespace OrdersAndProducts.Tests
 {
-    [TestFixture]
-    public class ServiceTest
-    {
+	[TestFixture]
+	public class ServiceTest
+	{
 		protected List<Product> products;
 
 		[OneTimeSetUp]
@@ -29,25 +29,25 @@ namespace OrdersAndProducts.Tests
 		}
 
 		[Test]
-        public void Can_Get_All_Product_Service()
-        {
-           
+		public void Can_Get_All_Product_Service()
+		{
 
-            Mock<IProductRepository> mockRepository = new Mock<IProductRepository>();
-            mockRepository.Setup(m => m.GetAll()).Returns(products);
 
-            Mock<IUnitOfWork> mockUOW = new Mock<IUnitOfWork>();
+			Mock<IProductRepository> mockRepository = new Mock<IProductRepository>();
+			mockRepository.Setup(m => m.GetAll()).Returns(products);
 
-            mockUOW.Setup(m => m.ProductRepository).Returns(mockRepository.Object);
-            Service service = new Service(mockUOW.Object);
+			Mock<IUnitOfWork> mockUOW = new Mock<IUnitOfWork>();
 
-            var result = service.GetAllProducts();
+			mockUOW.Setup(m => m.ProductRepository).Returns(mockRepository.Object);
+			Service service = new Service(mockUOW.Object);
+
+			var result = service.GetAllProducts();
 			Assert.AreEqual(products.Count, result.Count);
 
 
-        }
+		}
 
 
 
-    }
+	}
 }
