@@ -11,7 +11,7 @@ namespace Data
 
 		public CommerceContext() : base("Name=ECommerceEntities")
 		{
-
+			 
 		}
 	}
 }
